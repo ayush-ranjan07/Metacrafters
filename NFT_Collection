@@ -1,0 +1,52 @@
+/*
+Task:
+1. Implement the ability to create and store NFTs.
+2. Mint at least three NFTs.
+3. Implement the ability to print the details of NFTs to the console.
+4. Implement the ability to print the total supply of NFTs to the console.
+*/
+
+// Step 1: Initialize an empty array to hold NFTs
+let nftCollection = [];
+
+// Step 2: Define mintNFT function to create and store NFTs
+// This function takes parameters for NFT metadata and creates an NFT object
+function mintNFT(name, eyeColor, shirtType, bling) {
+    let newNFT = {
+        name: name, // Name of the NFT
+        eyeColor: eyeColor, // Eye color of the NFT character
+        shirtType: shirtType, // Type of shirt worn by the NFT character
+        bling: bling // Any additional accessory or feature that adds value to the NFT
+    };
+    // Add the new NFT object to the nftCollection array
+    nftCollection.push(newNFT);
+}
+
+// Step 3: Define listNFTs() function to print NFTs metadata
+// This function iterates through the nftCollection array and prints details of each NFT to the console
+function listNFTs() {
+    for (let i = 0; i < nftCollection.length; i++) {
+        let currentNFT = nftCollection[i];
+        console.log("Name: " + currentNFT.name +
+                    ", Eye Color: " + currentNFT.eyeColor +
+                    ", Shirt Type: " + currentNFT.shirtType +
+                    ", Bling: " + currentNFT.bling);
+    }
+}
+
+// Step 4: Define getTotalSupply() function to return the total number of NFTs
+// This function returns the total count of NFTs stored in the nftCollection array
+function getTotalSupply() {
+    return nftCollection.length;
+}
+
+// Step 5: Mint at least three NFTs with different characteristics
+mintNFT("NFT1", "Blue", "T-shirt", "Gold Chain");
+mintNFT("NFT2", "Green", "Hoodie", "Diamond Ring");
+mintNFT("NFT3", "Red", "Jacket", "Silver Bracelet");
+
+// Print details of all minted NFTs
+listNFTs(); // This should print the details of all three NFTs
+
+// Print the total number of minted NFTs
+console.log("Total NFTs: " + getTotalSupply()); // This should print the total number of NFTs
